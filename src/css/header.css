@@ -1,0 +1,11 @@
+.header {
+  min-width: 100%;
+  max-width: 100%;
+
+  padding-top: 0.5em;
+  padding-left: 1em;
+  padding-bottom: 0.5em;
+
+  background-color: #b4b3e4;
+  /* background-color: #94d4ff; */
+}

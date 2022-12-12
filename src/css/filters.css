@@ -1,0 +1,93 @@
+.filters {
+  min-width: 100%;
+  max-width: 100%;
+
+  margin-bottom: 1em;
+
+  padding: 0.5em 1em;
+
+  /* padding-top: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0.5em; */
+
+  display: flex;
+
+  background-color: #e74c4c;
+}
+
+.filters__inner {
+  margin-right: auto;
+}
+
+.filters__button {
+  /* height: 24px;
+  width: 24px; */
+
+  margin-right: 1em;
+  padding: 0.5em 1em;
+
+  border: none;
+  outline: none;
+  overflow: hidden;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-color: transparent; */
+
+  cursor: pointer;
+
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-check' viewBox='0 0 16 16'%3E%3Cpath d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+.filters__button:last-child {
+  margin-right: 0;
+}
+
+.calendar-options {
+  display: flex;
+  align-items: center;
+}
+
+.calendar-options__button {
+  height: 24px;
+  width: 24px;
+
+  margin-right: 1em;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: none;
+  outline: none;
+  overflow: hidden;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  /* opacity: 0.33;
+  transition: 0.08s; */
+}
+
+.calendar-options__button:last-child {
+  margin-right: 0;
+}
+
+.calendar-options__button--arrow-left {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40' width='40'%3E%3Cpath d='M24.125 30.25 13.875 20l10.25-10.25Z'/%3E%3C/svg%3E");
+}
+
+.calendar-options__button--arrow-right {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40' width='40'%3E%3Cpath d='M15.875 30.25V9.75L26.125 20Z'/%3E%3C/svg%3E");
+}
+
+.calendar-options__button--calendar {
+  width: 100px;
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' width='24'%3E%3Cpath d='M5 22q-.825 0-1.413-.587Q3 20.825 3 20V6q0-.825.587-1.412Q4.175 4 5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588Q21 5.175 21 6v14q0 .825-.587 1.413Q19.825 22 19 22Zm0-2h14V10H5v10Z'/%3E%3C/svg%3E"); */
+}
