@@ -4,18 +4,64 @@ import Task from "./Task";
 import "../css/column.css";
 
 function Column(props) {
-  const [tasks, setTasks] = React.useState([]);
+  const [taskList, setTaskList] = React.useState([]);
+
+  const resetTextarea = () => {
+    setCurrentValue("");
+  };
+
+  const keyDownHandler = (event) => {
+    // if (event.key === "Enter") {
+    if (event.keyCode === 13 && currentValue !== "") {
+      addTask();
+      resetTextarea();
+      event.preventDefault();
+    }
+    if (event.keyCode === 13 && currentValue === "") {
+      event.preventDefault();
+    }
+  };
 
   React.useEffect(() => {
-    setTasks(
-      props.tasks.map((task) => (
-        <Task key={uuidv4(task.taskId)} description={task.description} />
+    setTaskList(
+      props.tasks.map((task, index) => (
+        <Task
+          key={task.taskId}
+          taskIndex={index}
+          description={task.description}
+          deleteTask={deleteTask}
+        />
       ))
     );
   }, [props.tasks]);
 
+  const deleteTask = (index) => {
+    const newTaskList = [...taskList];
+    newTaskList.splice(index, 1);
+
+    setTaskList(newTaskList);
+  };
+
+  const addTask = () => {
+    const newTask = (
+      <Task
+        key={uuidv4(taskList.length + 1)}
+        taskIndex={taskList.length}
+        description={currentValue}
+        deleteTask={deleteTask}
+      />
+    );
+
+    console.log(taskList);
+    setTaskList([...taskList, newTask]);
+  };
+
   const textareaRef = React.useRef(null);
   const [currentValue, setCurrentValue] = React.useState("");
+
+  const textareaHandler = (event) => {
+    setCurrentValue(event.target.value);
+  };
 
   React.useEffect(() => {
     textareaRef.current.style.height = "0px";
@@ -29,14 +75,16 @@ function Column(props) {
       <div className="column__task-input-wrapper">
         <textarea
           ref={textareaRef}
-          onChange={(event) => setCurrentValue(event.target.value)}
+          onChange={textareaHandler}
+          // onChange={(event) => setCurrentValue(event.target.value)}
+          onKeyDown={keyDownHandler}
           value={currentValue}
           className="column__task-input"
           maxLength="128"
           placeholder="Enter task"
         ></textarea>
       </div>
-      <div className="column__task-list">{tasks}</div>
+      <div className="column__task-list">{taskList}</div>
     </div>
   );
 }

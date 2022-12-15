@@ -1,6 +1,7 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
-import "../src/css/app.css";
+import React from "react";
+import Header from "./Header";
+import Main from "./Main";
+import "../css/app.css";
 
 function App() {
   return (
